@@ -1,0 +1,7 @@
+@extends('admin.shell')
+@section('title','Proje talepleri')
+@section('body')
+<form method="get"><div class="tools"><label>İsim, e-posta veya referans<input name="q" value="{{ request('q') }}"></label><label>Durum<select name="status"><option value="">Tümü</option>@foreach($states as $key=>$label)<option value="{{ $key }}" @selected(request('status')===$key)>{{ $label }}</option>@endforeach</select></label><label>Sorumlu<select name="assigned_to"><option value="">Tümü</option>@foreach($team as $u)<option value="{{ $u->id }}" @selected(request('assigned_to')==$u->id)>{{ $u->name }}</option>@endforeach</select></label></div>
+<div class="tools">@foreach(['locale'=>'Dil','service_code'=>'Hizmet','from'=>'Başlangıç','to'=>'Bitiş'] as $key=>$label)<label>{{ $label }}<input type="{{ in_array($key,['from','to'])?'date':'text' }}" name="{{ $key }}" value="{{ request($key) }}"></label>@endforeach</div><button>Filtrele</button></form>
+<table><tr>@foreach(['Referans','Müşteri','Hizmet / bütçe','Dil','Durum','Sorumlu','Tarih'] as $h)<th>{{ $h }}</th>@endforeach</tr>@forelse($items as $e)<tr><td><a href="/admin/talepler/{{ $e->id }}">{{ $e->public_reference }}</a></td><td>{{ $e->contact_name }} · {{ $e->company }}</td><td>{{ $e->service_code }} / {{ $e->budget_code }}</td><td>{{ $e->locale }}</td><td>{{ $states[$e->status] }}</td><td>{{ $team->find($e->assigned_to)?->name }}</td><td>{{ $e->submitted_at }}</td></tr>@empty<tr><td colspan="7">Talep bulunamadı.</td></tr>@endforelse</table>{{ $items->links('pagination::simple-default') }}
+@endsection
