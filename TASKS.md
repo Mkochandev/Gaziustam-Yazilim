@@ -1,6 +1,6 @@
 # GaziUstam — Laravel uygulama planı ve Codex görevleri
 
-> Durum: Uygulama geliştirme şartnamesi. Bu dosyadaki kutular henüz yapılmış iş anlamına gelmez.
+> Durum: 7 Kasım 2026 yerel kabul sonuçları işlendi. İşaretli görevler uygulandı ve doğrulandı. Staging/production kontrolleri açık bırakıldı. Ayrıntılar docs/VERIFICATION.md içindedir.
 > Marka: gaziustam / GaziUstam. Alan: yazılım, mobil uygulama, web, e-ticaret, oyun, AI ve otomasyon ajansı.
 > Öncelikli pazar: Almanya ve Avusturya; kapsam: Avrupa. Geliştirme ekibi Türkiye'de.
 > Karar: İlk beğenilen tasarım korunacak; üretim uygulaması Laravel ile geliştirilecek.
@@ -284,83 +284,83 @@ Bu klasörler öneridir; çalışan proje standardı varsa ona uy. Controller'la
 
 ### Faz 0 — Kaynak inceleme ve temel kurulum
 
-- [ ] Mevcut repo, tasarım, görsel varlıklar, prototip form ve dil kaynaklarını incele; taşınacakları listele.
-- [ ] Laravel/PHP/Filament uyumlu sürümleri seç, lock dosyaları ve `.env.example` oluştur.
-- [ ] MySQL bağlantısı, migration, queue, storage ve Vite çalışsın.
-- [ ] README: kurulum/çalıştırma/test, admin oluşturma; `DECISIONS.md`: mimari kararlar.
-- [ ] Lokal seed: DE/EN/TR, altı hizmet, demo olduğu açık içerikler. Üretime sahte müşteri verisi basma.
+- [x] Mevcut repo, tasarım, görsel varlıklar, prototip form ve dil kaynaklarını incele; taşınacakları listele.
+- [x] Laravel/PHP/Filament uyumlu sürümleri seç, lock dosyaları ve `.env.example` oluştur.
+- [x] MySQL bağlantısı, migration, queue, storage ve Vite çalışsın.
+- [x] README: kurulum/çalıştırma/test, admin oluşturma; `DECISIONS.md`: mimari kararlar.
+- [x] Lokal seed: DE/EN/TR, altı hizmet, demo olduğu açık içerikler. Üretime sahte müşteri verisi basma.
 
 Kabul: temiz checkout'tan belgelenmiş komutlarla uygulama açılır; gerçek sır veya sabit üretim admin şifresi yok.
 
 ### Faz 1 — Görsel temel ve ana sayfa
 
-- [ ] Tasarım tokenları, Blade layout, header/footer, SVG yıldız bileşeni.
-- [ ] İlk tasarımın bölüm sırası, tipografi, mavi hero ve portföy sunumları.
-- [ ] DE/EN/TR dil route'ları ve seçici, mobil menü, hizmetten forma seçim.
-- [ ] Blog, portföy ve iletişim bağlantıları gerçek route'a gider; kırık placeholder link yok.
-- [ ] 360/390/768/1280/1440 px kontrolleri, klavye odağı ve azaltılmış hareket.
+- [x] Tasarım tokenları, Blade layout, header/footer, SVG yıldız bileşeni.
+- [x] İlk tasarımın bölüm sırası, tipografi, mavi hero ve portföy sunumları.
+- [x] DE/EN/TR dil route'ları ve seçici, mobil menü, hizmetten forma seçim.
+- [x] Blog, portföy ve iletişim bağlantıları gerçek route'a gider; kırık placeholder link yok.
+- [x] 360/390/768/1280/1440 px kontrolleri, klavye odağı ve azaltılmış hareket.
 
 Kabul: seçilen ilk tasarımın görsel karakteri korunur; mobilde emoji yıldız ve yatay taşma yok.
 
 ### Faz 2 — Admin, içerik ve çeviriler
 
-- [ ] Admin giriş/çıkış, roller ve policies.
-- [ ] Post/translation/category/media modelleri, migration ve Filament kaynakları.
-- [ ] Haber/makale türü, dil sürümü ekleme, zengin metin, kapak, SEO, taslak/yayın/planlama.
-- [ ] Çeviri matrisi, mevcut çeviriler arası geçiş, signed taslak önizleme.
-- [ ] Blog liste/detay, current/all dil düğmesi, kategori/tür/arama ve pagination.
-- [ ] Yayın sorguları ve cache temizliği ortak servislerden.
+- [x] Admin giriş/çıkış, roller ve policies.
+- [x] Post/translation/category/media modelleri, migration ve Filament kaynakları.
+- [x] Haber/makale türü, dil sürümü ekleme, zengin metin, kapak, SEO, taslak/yayın/planlama.
+- [x] Çeviri matrisi, mevcut çeviriler arası geçiş, signed taslak önizleme.
+- [x] Blog liste/detay, current/all dil düğmesi, kategori/tür/arama ve pagination.
+- [x] Yayın sorguları ve cache temizliği ortak servislerden.
 
 Kabul: bölüm 5'teki A/B dil senaryosu, panelden eklenen gerçek verilerle çalışır. Taslaklar ve gelecekteki sürümler sızmaz.
 
 ### Faz 3 — Form editörü
 
-- [ ] Sürümlü JSON şeması, allowlist validatörü ve varsayılan proje formu.
-- [ ] Alan ekleme/sıra/gizleme, çekirdek alan koruması, çeviri ve seçenek editörü.
-- [ ] Taslak–önizleme–yayınlama; eksik dil ve geçersiz şema kontrolleri.
-- [ ] Public Blade renderer, sunucu doğrulama kuralları ve CSRF.
-- [ ] Erişilebilir label/hata ilişkileri, alan bazlı hata ve girdileri koruma.
+- [x] Sürümlü JSON şeması, allowlist validatörü ve varsayılan proje formu.
+- [x] Alan ekleme/sıra/gizleme, çekirdek alan koruması, çeviri ve seçenek editörü.
+- [x] Taslak–önizleme–yayınlama; eksik dil ve geçersiz şema kontrolleri.
+- [x] Public Blade renderer, sunucu doğrulama kuralları ve CSRF.
+- [x] Erişilebilir label/hata ilişkileri, alan bazlı hata ve girdileri koruma.
 
 Kabul: panelden label/alan sırası değiştirilince taslak önizlemede görülür; yayınlanınca public forma yansır; yayınlanmış eski sürüm değişmez.
 
 ### Faz 4 — Gerçek talepler ve ekip akışı
 
-- [ ] Transaction içinde talep, cevaplar, snapshot ve ekler kaydı.
-- [ ] Idempotency, spam limiti, honeypot ve yapılandırılabilir Turnstile.
-- [ ] Yetkili talep listesi/detayı, filtreler, notlar, durum/sorumlu ve geçmiş.
-- [ ] Commit sonrası kuyruk bildirimi, başarısız işler ve tekrar deneme yönetimi.
-- [ ] Private ek indirme ve sahiplik/yetki kontrolleri.
+- [x] Transaction içinde talep, cevaplar, snapshot ve ekler kaydı.
+- [x] Idempotency, spam limiti, honeypot ve yapılandırılabilir Turnstile.
+- [x] Yetkili talep listesi/detayı, filtreler, notlar, durum/sorumlu ve geçmiş.
+- [x] Commit sonrası kuyruk bildirimi, başarısız işler ve tekrar deneme yönetimi.
+- [x] Private ek indirme ve sahiplik/yetki kontrolleri.
 
 Kabul: public form gönderimi panelde tek kayıt olur. Form düzenlendikten sonra eski talep etiketleri/cevapları bozulmaz. Mail arızası kaydı kaybettirmez.
 
 ### Faz 5 — Portföy yönetimi
 
-- [ ] Proje/çeviri/galeri modelleri ve panel CRUD.
-- [ ] Kategori, sıralama, öne çıkarma, konsept, URL ve SEO.
-- [ ] Ana sayfa seçkisi ve portföy liste/detay veri bağlantısı.
-- [ ] Dil görünürlüğü, görsel optimizasyonu ve galeri erişilebilirliği.
+- [x] Proje/çeviri/galeri modelleri ve panel CRUD.
+- [x] Kategori, sıralama, öne çıkarma, konsept, URL ve SEO.
+- [x] Ana sayfa seçkisi ve portföy liste/detay veri bağlantısı.
+- [x] Dil görünürlüğü, görsel optimizasyonu ve galeri erişilebilirliği.
 
 Kabul: admin panelden eklenen yayınlanmış proje doğru dilde ana sayfada ve portföyde görünür; taslak görünmez.
 
 ### Faz 6 — API ve SEO
 
-- [ ] Kapsamlı token oluşturma/iptal ve içerik API'si.
-- [ ] Draft varsayılanı, ayrı publish yetkisi, external_id idempotency.
-- [ ] Payload örnekleri ve kurulum gerektirmeyen test istemcisi.
-- [ ] Canonical, hreflang, sitemap, slug 301 ve structured data.
-- [ ] Önbellek anahtarları ve yayın zamanı/silme güncellemeleri.
+- [x] Kapsamlı token oluşturma/iptal ve içerik API'si.
+- [x] Draft varsayılanı, ayrı publish yetkisi, external_id idempotency.
+- [x] Payload örnekleri ve kurulum gerektirmeyen test istemcisi.
+- [x] Canonical, hreflang, sitemap, slug 301 ve structured data.
+- [x] Önbellek anahtarları ve yayın zamanı/silme güncellemeleri.
 
 Kabul: API taslağı panelde görülür; publish yetkisi olmayan token yayınlayamaz; aynı kaynak yazı tekrar gönderilince çoğalmaz.
 
 ### Faz 7 — Üretime hazırlık ve teslim
 
 - [ ] MySQL üzerinde kritik feature testleri ve staging smoke testleri.
-- [ ] Queue worker/scheduler, günlük backup ve restore denemesi belgeleri.
+- [x] Queue worker/scheduler, günlük backup ve restore denemesi belgeleri.
 - [ ] HTTPS, production debug kapalı, güvenli session/cookie, private dosya kontrolü.
-- [ ] CDN cache istisnaları, hata izleme, yapılandırma ve kapasite notları.
-- [ ] Masaüstü/mobil ekran görüntüleriyle görsel QA raporu.
-- [ ] README + DEPLOYMENT + API + CONTENT_GUIDE ve tamamlanan görev listesi.
-- [ ] Gerçek SMTP/domain/token gibi kullanıcıya ait eksikler açıkça teslim raporunda; bağlı değilken bağlı denmez.
+- [x] CDN cache istisnaları, hata izleme, yapılandırma ve kapasite notları.
+- [x] Masaüstü/mobil ekran görüntüleriyle görsel QA raporu.
+- [x] README + DEPLOYMENT + API + CONTENT_GUIDE ve tamamlanan görev listesi.
+- [x] Gerçek SMTP/domain/token gibi kullanıcıya ait eksikler açıkça teslim raporunda; bağlı değilken bağlı denmez.
 
 ## 13. Anlamlı test matrisi
 
@@ -418,4 +418,4 @@ Bu bağlantılar kurulum sırasında güncel paket uyumluluğu için tekrar kont
 - Livewire installation: https://livewire.laravel.com/docs/4.x/installation
 - Cloudflare Workers dilleri: https://developers.cloudflare.com/workers/languages/
 
-Not: Burada uygulama planı teslim edilmektedir. Mevcut yayınlanmış prototip bu belge hazırlanırken Laravel'e dönüştürülmemiştir.
+Not: İlk tasarımın gerçek kaynaklarından Laravel/Blade uygulaması geliştirildi. İlk şartname GAZIUSTAM_TASKS.md içinde korunur. Yerel doğrulama ve yayın öncesi açık işler docs/VERIFICATION.md içinde kayıtlıdır.

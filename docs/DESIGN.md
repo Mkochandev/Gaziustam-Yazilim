@@ -40,3 +40,12 @@ Dil ve mobil gezinti menülerinde yerel HTML `details` kullanılır. Klavye ile 
 | Teklif formu | [390 px](qa/form-390.png) | [1440 px](qa/form-1440.png) |
 
 Bu kontroller yerel sayfalar içindir. Üretim altyapısında Lighthouse puanı ve gerçek cihaz performans ölçümü ayrıca yapılmalıdır.
+
+## Panel doğrulaması
+
+7 Kasım 2026 tarihinde form editörü ve zengin içerik editörü 390, 768 ve 1440 px üzerinde açıldı. Yatay taşma görülmedi. Form etiketi değişikliği canlı önizlemede gösterildi. Geçici yerel Owner hesabıyla panel girişi, içerik listesi ve Ayarlar ekranı doğrulandı. Test hesabı işlem sonunda kaldırıldı.
+
+- [Form editörü, masaüstü](qa/admin-form-1440.png)
+- [Form editörü, mobil](qa/admin-form-390.png)
+- [Zengin editör, masaüstü](qa/admin-editor-1440.png)
+- [Zengin editör, mobil](qa/admin-editor-390.png)
