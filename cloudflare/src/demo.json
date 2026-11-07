@@ -1,0 +1,98 @@
+{
+  "de": [
+    [
+      "Ein gutes Briefing beginnt mit dem Ziel",
+      "Was vor dem ersten Entwicklungsgespräch wirklich hilfreich ist.",
+      "Ein Projektbrief muss kein technisches Lastenheft sein. Beschreiben Sie zuerst, welches Problem Sie lösen möchten und wer die neue Lösung nutzen wird. Ein konkreter heutiger Ablauf ist oft hilfreicher als eine lange Liste gewünschter Funktionen.\n\nNotieren Sie anschließend die vorhandenen Werkzeuge, benötigte Schnittstellen und wichtige Rahmenbedingungen. Welche Daten werden verarbeitet? Wer gibt Entscheidungen frei? Was muss zum Start funktionieren, und was kann später folgen?\n\nEin grober Budgetrahmen und ein gewünschter Start helfen bei der Einordnung. Daraus entsteht im Gespräch ein nachvollziehbarer Umfang. Erst wenn Annahmen und offene Fragen geklärt sind, lässt sich ein passendes Angebot ausarbeiten."
+    ],
+    [
+      "Automatisierung: mit einem Ablauf beginnen",
+      "Warum ein klar abgegrenzter Prozess ein guter erster Schritt ist.",
+      "Wählen Sie für den Anfang einen wiederkehrenden Ablauf. Beschreiben Sie den Auslöser, die beteiligten Personen und das gewünschte Ergebnis. Prüfen Sie auch, welche Ausnahmen auftreten und wann ein Mensch entscheiden muss.\n\nEine sinnvolle erste Version kann Informationen zusammentragen und einen Vorschlag vorbereiten. Ihr Team kontrolliert das Ergebnis, bevor eine Nachricht verschickt oder ein Datensatz verändert wird.\n\nNach einer Erprobung lassen sich Fehlerfälle und Nutzen besser einschätzen. Erst dann sollte entschieden werden, welche weiteren Schritte automatisiert werden."
+    ],
+    [
+      "Nach dem Launch ist vor dem Betrieb",
+      "Welche Fragen zur Betreuung bereits ins Projektgespräch gehören.",
+      "Zum Produkt gehören auch die Konten, auf denen es läuft. Klären Sie frühzeitig, wem Domain, Repository und Anbieterzugänge gehören und wie die technischen Verantwortlichkeiten verteilt sind.\n\nSprechen Sie über Updates, Sicherungen, Wiederherstellung und den Umgang mit Störungen. Ein verlässlicher Plan benennt Zuständigkeiten und Grenzen, statt pauschal unbegrenzte Betreuung zu versprechen.\n\nDokumentation und eine geordnete Übergabe helfen auch dann, wenn ein anderes Team später weiterarbeitet. Laufende Anbietergebühren sollten neben der eigentlichen Betreuung transparent sichtbar sein."
+    ],
+    [
+      "Individualsoftware",
+      "Portale und interne Werkzeuge für Ihre Prozesse.",
+      "Portale und interne Werkzeuge für Ihre Prozesse."
+    ],
+    [
+      "Mobile Apps",
+      "iOS- und Android-Apps für Ihre Kunden und Teams.",
+      "iOS- und Android-Apps für Ihre Kunden und Teams."
+    ],
+    [
+      "E-Commerce",
+      "Onlineshops und passende Integrationen.",
+      "Onlineshops und passende Integrationen."
+    ]
+  ],
+  "en": [
+    [
+      "A useful brief starts with the goal",
+      "What helps before the first development conversation.",
+      "A project brief does not have to be a technical specification. Start with the problem you want to solve and the people who will use the result. Describe a current workflow rather than only listing features.\n\nAdd existing tools, required integrations and practical constraints. What data will be processed? Who makes decisions? Which parts are essential for the first release?\n\nAn approximate budget and preferred start provide useful context. The conversation can then turn these notes into an agreed scope and an appropriate proposal."
+    ],
+    [
+      "Automation: start with one workflow",
+      "A clearly bounded process makes a useful starting point.",
+      "Choose one recurring workflow. Identify its trigger, the people involved and the intended outcome. Include exceptions and decisions that should remain with a person.\n\nA first version might gather information and prepare a suggestion. Your team reviews it before a message is sent or a record is changed.\n\nA trial provides evidence about errors and usefulness. Decide which additional steps to automate only after this review."
+    ],
+    [
+      "Plan beyond the launch",
+      "Bring operations and handover into the first project conversation.",
+      "A product depends on the accounts it runs on. Establish who owns the domain, repository and provider accounts and who is responsible for their operation.\n\nDiscuss updates, backups, restoration and incidents. A useful support agreement specifies responsibilities and limits.\n\nDocumentation and an orderly handover also help a future team. Provider charges should be visible alongside the cost of technical support."
+    ],
+    [
+      "Custom software",
+      "Portals and internal tools built around your processes.",
+      "Portals and internal tools built around your processes."
+    ],
+    [
+      "Mobile apps",
+      "iOS and Android apps for your customers and teams.",
+      "iOS and Android apps for your customers and teams."
+    ],
+    [
+      "E-commerce",
+      "Online shops and useful integrations.",
+      "Online shops and useful integrations."
+    ]
+  ],
+  "tr": [
+    [
+      "İyi bir proje briefi hedefle başlar",
+      "İlk geliştirme görüşmesinden önce neleri hazırlamak faydalı olur?",
+      "Proje briefi teknik bir şartname olmak zorunda değil. Önce çözmek istediğiniz sorunu ve ürünü kullanacak kişileri anlatın. Uzun bir özellik listesinden önce mevcut iş akışını somutlaştırın.\n\nKullandığınız araçları, bağlanması gereken sistemleri ve önemli sınırları ekleyin. Hangi veriler işlenecek? Kararları kim verecek? İlk sürümde neler mutlaka bulunmalı?\n\nYaklaşık bütçe ve başlangıç zamanı görüşmeyi kolaylaştırır. Bu bilgiler birlikte değerlendirilerek anlaşılır bir kapsama ve uygun bir teklife dönüştürülür."
+    ],
+    [
+      "Otomasyona tek bir akışla başlayın",
+      "Sınırları belli bir süreç neden iyi bir başlangıçtır?",
+      "Tekrar eden bir süreci seçin. Akışı neyin başlattığını, kimlerin katıldığını ve beklenen sonucu yazın. İstisnaları ve insan kararının gerektiği noktaları da belirtin.\n\nİlk sürüm bilgileri toplayıp bir öneri hazırlayabilir. Mesaj gönderilmeden veya bir kayıt değiştirilmeden önce ekibiniz sonucu inceler.\n\nDeneme sonunda hata türleri ve sağlanan fayda daha görünür olur. Sonraki adımları bu gözlemlerle seçmek gerekir."
+    ],
+    [
+      "Yayından sonrasını da planlayın",
+      "Bakım ve devir konularını ilk görüşmeye dahil edin.",
+      "Bir ürünün çalıştığı hesaplar da projenin parçasıdır. Domain, kod deposu ve sağlayıcı hesaplarının kime ait olduğunu, teknik sorumlulukların kimde bulunduğunu erkenden belirleyin.\n\nGüncellemeleri, yedekleri, geri yüklemeyi ve arıza durumlarını konuşun. Bakım kapsamı sorumlulukları ve sınırları açıkça göstermelidir.\n\nDüzenli dokümantasyon ve devir, gelecekte başka bir ekiple çalışmayı da kolaylaştırır. Sağlayıcı ücretleri ile teknik bakım bedelini ayrı görmek maliyetleri anlamayı sağlar."
+    ],
+    [
+      "Özel yazılım",
+      "Süreçlerinize uygun portallar ve şirket içi araçlar.",
+      "Süreçlerinize uygun portallar ve şirket içi araçlar."
+    ],
+    [
+      "Mobil uygulamalar",
+      "Müşterileriniz ve ekibiniz için iOS ve Android uygulamaları.",
+      "Müşterileriniz ve ekibiniz için iOS ve Android uygulamaları."
+    ],
+    [
+      "E-ticaret",
+      "Online mağazalar ve ihtiyacınıza uygun entegrasyonlar.",
+      "Online mağazalar ve ihtiyacınıza uygun entegrasyonlar."
+    ]
+  ]
+}

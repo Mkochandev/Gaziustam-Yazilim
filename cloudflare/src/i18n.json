@@ -1,0 +1,272 @@
+{
+  "de": {
+    "studio": {
+      "services": "Leistungen",
+      "projects": "Projekte",
+      "journal": "Blog",
+      "cta": "Projekt anfragen",
+      "headline": "Digitale Lösungen.",
+      "accent": "Türkische Expertise.",
+      "intro": "Software, Apps und KI-Automatisierung aus der Türkei. Für Unternehmen in Deutschland, Österreich und Europa.",
+      "service_title": "Die passende digitale Lösung.",
+      "work_title": "Arbeit, die für sich spricht.",
+      "all": "Alle",
+      "read_project": "Projekt ansehen",
+      "journal_title": "Gedanken. Ideen. Einblicke.",
+      "journal_intro": "Wissen rund um Software, KI und digitale Prozesse.",
+      "read_post": "Artikel lesen",
+      "process": "So arbeiten wir.",
+      "brief": "Vorhaben beschreiben",
+      "meet": "Persönlich sprechen",
+      "deliver": "Gemeinsam umsetzen",
+      "contact": "Was haben Sie vor?",
+      "empty": "Noch keine Inhalte in dieser Sprache veröffentlicht.",
+      "demo": "Beispielinhalt",
+      "concept": "Konzept",
+      "menu": "Menü",
+      "language": "Sprache",
+      "skip": "Zum Inhalt",
+      "privacy": "Datenschutz",
+      "legal": "Impressum",
+      "top": "Zurück nach oben",
+      "unavailable": "Diese Übersetzung ist noch nicht veröffentlicht. Zur Übersicht.",
+      "art_alt": "Kobaltblaue Chromskulptur",
+      "all_projects": "Alle Projekte",
+      "all_posts": "Zum Journal",
+      "disciplines": {
+        "ai": {
+          "title": "KI & Automatisierung",
+          "description": "Abläufe verbinden und wiederkehrende Aufgaben vereinfachen."
+        },
+        "software": {
+          "title": "Individualsoftware",
+          "description": "Portale und interne Werkzeuge für Ihre Prozesse."
+        },
+        "apps": {
+          "title": "Mobile Apps",
+          "description": "iOS- und Android-Apps für Ihre Kunden und Teams."
+        },
+        "web": {
+          "title": "Websites",
+          "description": "Klare, responsive Websites für Ihr Unternehmen."
+        },
+        "commerce": {
+          "title": "E-Commerce",
+          "description": "Onlineshops und passende Integrationen."
+        },
+        "games": {
+          "title": "Games & Prototypen",
+          "description": "Spielbare Ideen und interaktive Prototypen."
+        }
+      }
+    },
+    "forms": {
+      "recovered": "Ihre bisherigen Angaben",
+      "send": "Anfrage senden",
+      "saved": "Ihre Anfrage wurde gespeichert. Wir melden uns per E-Mail. Referenz",
+      "required": ":attribute ist erforderlich.",
+      "invalid": "Bitte prüfen Sie Ihre Eingabe.",
+      "expired": "Das Formular wurde aktualisiert. Bitte prüfen und erneut senden.",
+      "blog": "Journal",
+      "projects": "Projekte",
+      "news": "Nachrichten",
+      "article": "Artikel",
+      "only": "Nur Inhalte auf Deutsch",
+      "all": "Alle Sprachen anzeigen",
+      "filter": "Filtern",
+      "search": "Suche",
+      "category": "Kategorie",
+      "type": "Typ",
+      "empty": "Keine passenden Einträge.",
+      "concept": "Konzept",
+      "privacy": "Datenschutz",
+      "legal": "Impressum",
+      "pending": "Dieser Text wird vor dem öffentlichen Start redaktionell geprüft.",
+      "problem": "Aufgabe",
+      "solution": "Lösung",
+      "deliverables": "Ergebnisse",
+      "site": "Website besuchen",
+      "intro": "Perspektiven aus der Softwareentwicklung und Einblicke in unsere Arbeit."
+    }
+  },
+  "en": {
+    "studio": {
+      "services": "Services",
+      "projects": "Projects",
+      "journal": "Journal",
+      "cta": "Discuss a project",
+      "headline": "Digital solutions.",
+      "accent": "Turkish expertise.",
+      "intro": "Software, apps and AI automation from Türkiye. For businesses in Germany, Austria and across Europe.",
+      "service_title": "The right digital solution.",
+      "work_title": "Work that speaks for itself.",
+      "all": "All",
+      "read_project": "View project",
+      "journal_title": "Thoughts. Ideas. Insights.",
+      "journal_intro": "Notes on software, AI and digital workflows.",
+      "read_post": "Read article",
+      "process": "How we work.",
+      "brief": "Describe your idea",
+      "meet": "Have a conversation",
+      "deliver": "Build together",
+      "contact": "What do you have in mind?",
+      "empty": "No content published in this language yet.",
+      "demo": "Sample content",
+      "concept": "Concept",
+      "menu": "Menu",
+      "language": "Language",
+      "skip": "Skip to content",
+      "privacy": "Privacy",
+      "legal": "Legal notice",
+      "top": "Back to top",
+      "unavailable": "This translation is not available yet. Go to the list.",
+      "art_alt": "Cobalt-blue chrome sculpture",
+      "all_projects": "All projects",
+      "all_posts": "All articles",
+      "disciplines": {
+        "ai": {
+          "title": "AI & automation",
+          "description": "Connect workflows and simplify repetitive tasks."
+        },
+        "software": {
+          "title": "Custom software",
+          "description": "Portals and internal tools built around your processes."
+        },
+        "apps": {
+          "title": "Mobile apps",
+          "description": "iOS and Android apps for your customers and teams."
+        },
+        "web": {
+          "title": "Websites",
+          "description": "Clear, responsive websites for your business."
+        },
+        "commerce": {
+          "title": "E-commerce",
+          "description": "Online shops and useful integrations."
+        },
+        "games": {
+          "title": "Games & prototypes",
+          "description": "Playable ideas and interactive prototypes."
+        }
+      }
+    },
+    "forms": {
+      "recovered": "Your previous answers",
+      "send": "Send enquiry",
+      "saved": "Your enquiry was saved. We will follow up by email. Reference",
+      "required": ":attribute is required.",
+      "invalid": "Please check your input.",
+      "expired": "This form was updated. Review your answers and submit again.",
+      "blog": "Journal",
+      "projects": "Projects",
+      "news": "News",
+      "article": "Articles",
+      "only": "English content only",
+      "all": "Show all languages",
+      "filter": "Filter",
+      "search": "Search",
+      "category": "Category",
+      "type": "Type",
+      "empty": "No matching entries.",
+      "concept": "Concept",
+      "privacy": "Privacy",
+      "legal": "Legal notice",
+      "pending": "This page is awaiting editorial review before launch.",
+      "problem": "Problem",
+      "solution": "Solution",
+      "deliverables": "Deliverables",
+      "site": "Visit website",
+      "intro": "Ideas from software development and a closer look at our work."
+    }
+  },
+  "tr": {
+    "studio": {
+      "services": "Hizmetler",
+      "projects": "Projeler",
+      "journal": "Blog",
+      "cta": "Projenizi konuşalım",
+      "headline": "Usta işi yazılım.",
+      "accent": "Türkiye’den Avrupa’ya.",
+      "intro": "Türkiye’den Avrupa’ya yazılım, mobil uygulama ve AI otomasyonu. Fikirden tasarıma, geliştirmeden teslimata.",
+      "service_title": "İşinize uygun dijital çözüm.",
+      "work_title": "Projelerimiz anlatsın.",
+      "all": "Tümü",
+      "read_project": "Projeyi incele",
+      "journal_title": "Fikirler. Deneyimler. İçgörüler.",
+      "journal_intro": "Yazılım, yapay zekâ ve dijital süreçler üzerine yazılar.",
+      "read_post": "Yazıyı oku",
+      "process": "Nasıl çalışıyoruz?",
+      "brief": "Projenizi anlatın",
+      "meet": "Birlikte görüşelim",
+      "deliver": "Hayata geçirelim",
+      "contact": "Aklınızda ne var?",
+      "empty": "Bu dilde henüz içerik yayımlanmadı.",
+      "demo": "Örnek içerik",
+      "concept": "Konsept",
+      "menu": "Menü",
+      "language": "Dil",
+      "skip": "İçeriğe geç",
+      "privacy": "Gizlilik",
+      "legal": "Yasal bilgiler",
+      "top": "Başa dön",
+      "unavailable": "Bu dilde çeviri henüz yayımlanmadı. Listeye git.",
+      "art_alt": "Kobalt mavisi krom heykel",
+      "all_projects": "Tüm projeler",
+      "all_posts": "Tüm yazılar",
+      "disciplines": {
+        "ai": {
+          "title": "AI ve otomasyon",
+          "description": "İş akışlarını birleştirip tekrar eden işleri kolaylaştırıyoruz."
+        },
+        "software": {
+          "title": "Özel yazılım",
+          "description": "Süreçlerinize uygun portallar ve şirket içi araçlar."
+        },
+        "apps": {
+          "title": "Mobil uygulamalar",
+          "description": "Müşterileriniz ve ekibiniz için iOS ve Android uygulamaları."
+        },
+        "web": {
+          "title": "Web siteleri",
+          "description": "İşletmeniz için anlaşılır, mobil uyumlu web siteleri."
+        },
+        "commerce": {
+          "title": "E-ticaret",
+          "description": "Online mağazalar ve ihtiyacınıza uygun entegrasyonlar."
+        },
+        "games": {
+          "title": "Oyun ve prototip",
+          "description": "Oynanabilir fikirler ve etkileşimli prototipler."
+        }
+      }
+    },
+    "forms": {
+      "recovered": "Önceki yanıtlarınız",
+      "send": "Talebi gönder",
+      "saved": "Talebiniz kaydedildi. Size e-postayla dönüş yapacağız. Referans",
+      "required": ":attribute alanı zorunludur.",
+      "invalid": "Girdiğiniz bilgileri kontrol edin.",
+      "expired": "Form güncellendi. Yanıtlarınızı kontrol edip yeniden gönderin.",
+      "blog": "Yazılar",
+      "projects": "Projeler",
+      "news": "Haberler",
+      "article": "Makaleler",
+      "only": "Yalnızca Türkçe içerikler",
+      "all": "Tüm dilleri göster",
+      "filter": "Filtrele",
+      "search": "Ara",
+      "category": "Kategori",
+      "type": "Tür",
+      "empty": "Eşleşen içerik bulunamadı.",
+      "concept": "Konsept",
+      "privacy": "Gizlilik",
+      "legal": "Yasal bilgiler",
+      "pending": "Bu sayfanın metni yayından önce gözden geçirilecek.",
+      "problem": "Sorun",
+      "solution": "Çözüm",
+      "deliverables": "Teslimatlar",
+      "site": "Siteyi ziyaret et",
+      "intro": "Yazılım geliştirme üzerine fikirler ve stüdyodan çalışmalar."
+    }
+  }
+}

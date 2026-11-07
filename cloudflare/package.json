@@ -1,0 +1,27 @@
+{
+  "name": "gaziustam-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/index.js && node --check public/admin.js",
+    "deploy": "node scripts/deploy.mjs",
+    "db:local": "wrangler d1 migrations apply DB --local",
+    "db:remote": "wrangler d1 migrations apply DB --remote",
+    "setup": "node scripts/setup.mjs",
+    "owner": "node scripts/owner.mjs",
+    "launch": "node scripts/launch.mjs",
+    "seed:demo": "node scripts/seed-demo.mjs"
+  },
+  "dependencies": {
+    "sanitize-html": "2.17.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.92.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

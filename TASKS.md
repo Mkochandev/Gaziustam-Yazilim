@@ -1,3 +1,5 @@
+> **Güncel yayın hedefi:** Ücretsiz Cloudflare Workers + D1. Uygulanmış Cloudflare sürümü `cloudflare/` dizininde; başlangıç için kökteki README.md dosyasını okuyun. Aşağıdaki Laravel kararları/görevleri önceki uygulamanın tarihçesidir ve artık hosting talimatı değildir.
+
 # GaziUstam — Laravel uygulama planı ve Codex görevleri
 
 > Durum: 7 Kasım 2026 yerel kabul sonuçları işlendi. İşaretli görevler uygulandı ve doğrulandı. Staging/production kontrolleri açık bırakıldı. Ayrıntılar docs/VERIFICATION.md içindedir.

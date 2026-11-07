@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gaziustam",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {"directory": "./public", "binding": "ASSETS"},
+  "d1_databases": [{"binding":"DB", "database_name":"gaziustam", "database_id":"local-gaziustam", "migrations_dir":"migrations"}],
+  "vars": {"ENVIRONMENT":"production", "TURNSTILE_SITE_KEY":""},
+  "observability": {"enabled": false}
+}
