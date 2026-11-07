@@ -1,0 +1,75 @@
+# GaziUstam
+
+Laravel ve Blade ile sunucuda render edilen ajans sitesi. DE/EN/TR arayüz, ilişkili içerik çevirileri, Filament paneli, sürümlü teklif formu ve Sanctum API içerir.
+
+## Gereksinimler
+
+PHP 8.2–8.4, Composer 2, MySQL 8 ve Node 22. PHP'de intl, mbstring, pdo_mysql, fileinfo, gd, zip, dom ve openssl etkin olmalıdır. Composer kilidi Laravel 12.71.0, Filament 5.11.1 ve Livewire 4.4.8 içerir. Laravel 12'nin güvenlik desteği 24 Şubat 2027'ye kadar sürer. Üretimde PHP'nin güncel yamalı sürümünü kullanın. [Laravel sürüm politikası](https://laravel.com/docs/12.x/releases) ve [Filament kurulumu](https://filamentphp.com/docs/5.x/introduction/installation)
+
+Yerel doğrulama Windows, PHP 8.2.12, MySQL 8.0.46 ve SQLite üzerinde yapıldı. XAMPP ortamında intl ek ini ile etkinleştirildi.
+
+## Kurulum
+
+MySQL'de uygulamaya özel veritabanı ve kullanıcı oluşturun. Ardından proje dizininde aşağıdaki komutları çalıştırın. .env içindeki DB değerlerini kendi erişiminizle doldurun. .env Git dışında tutulur.
+
+    composer install
+    cp .env.example .env
+    php artisan key:generate
+    # DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME ve DB_PASSWORD değerlerini doldurun.
+    php artisan migrate --seed
+    php artisan storage:link
+    npm ci
+    npm run build
+    php artisan studio:owner admin@example.com
+    php artisan serve
+
+PowerShell'de kopyalama için Copy-Item .env.example .env kullanılır. Bu makinede PHP çalıştırmadan önce gerekirse aşağıdaki komut uygulanır. Temiz checkout'ta php.ini içinden intl etkinleştirmek yeterlidir. .runtime yalnız yerel yardımcı dosyalardır.
+
+    $env:PHP_INI_SCAN_DIR=(Resolve-Path .runtime).Path
+
+Ana sayfa /de, panel /admin adresindedir. Owner komutu isim ve parolayı etkileşimli sorar. Hazır admin hesabı veya sabit parola yoktur. Başka kullanıcıları Owner panelden oluşturur.
+
+Yerel hızlı kurulum için .env içinde DB_CONNECTION=sqlite seçin, DB_DATABASE satırını kaldırın ve database/database.sqlite dosyasını oluşturun. Diğer adımlar aynıdır. MySQL üretim hedefidir.
+
+APP_ENV=local veya testing olduğunda seed açıkça örnek olarak etiketlenmiş yazılar ve konsept projeler oluşturur. Üretimde yalnız dil listesi, kategoriler ve başlangıç formu kurulur. Seed tekrar çalıştırılabilir.
+
+## Çalıştırma ve test
+
+    php artisan serve
+    # Ayrı terminalde
+    php artisan queue:work database --tries=4 --timeout=60
+    # Geliştirme sırasında isteğe bağlı
+    npm run dev
+    # Test
+    php vendor/phpunit/phpunit/phpunit
+
+PHPUnit varsayılan olarak bellekte SQLite kullanır. MySQL testinde ayrı ve boş bir veritabanı gereklidir. Testler bu veritabanının tablolarını yeniden kurar.
+
+    $env:DB_CONNECTION='mysql'
+    $env:DB_HOST='127.0.0.1'
+    $env:DB_PORT='3306'
+    $env:DB_DATABASE='gaziustam_test'
+    $env:DB_USERNAME='gaziustam_test'
+    $env:DB_PASSWORD='YOUR_LOCAL_TEST_PASSWORD'
+    php vendor/phpunit/phpunit/phpunit
+
+Bu makinenin sandbox ortamında PHP proje yolunu veya önbellek dizinini okuyamayabilir. Doğrulamalar izin verilen normal Windows sürecinde çalıştırıldı. Türkçe dizin yolunda PHPUnit doğrudan çağrıldı.
+
+## Bildirimler ve harici servisler
+
+MAIL_MAILER=log yerel test sürücüsüdür ve dışarı e-posta teslim etmez. ENQUIRY_NOTIFY_TO bildirim alıcısını belirler. Gerçek SMTP için MAIL_MAILER=smtp ve sağlayıcı değerleri gerekir. Alıcı eksikse kuyruk işi açık hata verir, talep korunur. Owner Ayarlar ekranında başarısız işleri tekrar kuyruğa alabilir.
+
+Turnstile isteğe bağlıdır. TURNSTILE_SITE_KEY ve TURNSTILE_SECRET birlikte tanımlanır. Doğrulama servisi hata verirse gönderim kabul edilmez. Varsayılanda honeypot ve IP hız limiti etkindir.
+
+ENQUIRY_RETENTION_DAYS başlangıçta 180 gündür. İşletmenin saklama gereksinimine göre incelenmelidir. Hukuki ve gizlilik sayfaları yayın öncesi işletme bilgileri ve onaylı metin bekler.
+
+## Belgeler
+
+- [Mimari kararlar](DECISIONS.md)
+- [Kaynak tasarım ve ekran görüntüleri](docs/DESIGN.md)
+- [Yayın, yedek ve geri yükleme](docs/DEPLOYMENT.md)
+- [API ve örnek istemci](docs/API.md)
+- [İçerik ve ekip rehberi](docs/CONTENT_GUIDE.md)
+- [Doğrulama ve açık işler](docs/VERIFICATION.md)
+- [Görev durumu](TASKS.md)
+

@@ -1,0 +1,2 @@
+document.querySelectorAll('header details').forEach(menu=>{document.addEventListener('click',event=>{if(!menu.contains(event.target)||event.target.closest('a'))menu.removeAttribute('open')});menu.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus()}})});
+document.querySelectorAll('.enquiry-fields').forEach(form=>form.addEventListener('submit',()=>{if(form.checkValidity()){const b=form.querySelector('button[type=submit]');b.disabled=true;setTimeout(()=>b.disabled=false,10000)}}));

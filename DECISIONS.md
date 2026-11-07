@@ -1,3 +1,5 @@
+> **Güncel yayın hedefi:** Ücretsiz Cloudflare Workers + D1. Uygulanmış Cloudflare sürümü `cloudflare/` dizininde; başlangıç için kökteki README.md dosyasını okuyun. Aşağıdaki Laravel kararları/görevleri önceki uygulamanın tarihçesidir ve artık hosting talimatı değildir.
+
 # Mimari kararlar
 
 - Kamuya açık HTML Blade'de üretilir. Arama, dil filtresi, kategori ve sayfalama GET parametreleridir. Teklif formu CSRF korumalı POST ile çalışır.

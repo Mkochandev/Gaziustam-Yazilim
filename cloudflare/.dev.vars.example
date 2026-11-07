@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local development. Never commit actual secrets.
+SESSION_SECRET=replace-with-at-least-32-random-characters
+# Optional: configure both together, otherwise honeypot + rate limit applies.
+TURNSTILE_SECRET=
