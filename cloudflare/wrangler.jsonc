@@ -3,10 +3,27 @@
   "name": "gaziustam",
   "main": "src/index.js",
   "compatibility_date": "2026-05-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "workers_dev": true,
-  "assets": {"directory": "./public", "binding": "ASSETS"},
-  "d1_databases": [{"binding":"DB", "database_name":"gaziustam", "database_id":"local-gaziustam", "migrations_dir":"migrations"}],
-  "vars": {"ENVIRONMENT":"production", "TURNSTILE_SITE_KEY":""},
-  "observability": {"enabled": false}
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gaziustam",
+      "database_id": "741e506c-a01f-4512-a242-92e6d4267fab",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "TURNSTILE_SITE_KEY": ""
+  },
+  "observability": {
+    "enabled": false
+  }
 }
