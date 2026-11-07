@@ -8,5 +8,6 @@
 <section><form method="post">@csrf<label>Durum<select name="status">@foreach($states as $key=>$label)<option value="{{ $key }}" @selected($item->status===$key)>{{ $label }}</option>@endforeach</select></label>
 <label>Sorumlu<select name="assigned_to"><option value="">Atanmadı</option>@foreach($team as $u)<option value="{{ $u->id }}" @selected($item->assigned_to==$u->id)>{{ $u->name }}</option>@endforeach</select></label>
 <label>İç not<textarea name="note">{{ old('note') }}</textarea></label><button>Kaydet</button></form><h2>Geçmiş</h2>
-@foreach($events as $event)<p>{{ $event->created_at }} · {{ $event->old_status?$states[$event->old_status].' → ':'' }}{{ $states[$event->new_status] }} · {{ $event->note }}</p>@endforeach</section></div>
+@foreach($events as $event)<p>{{ $event->created_at }} · {{ $team->find($event->user_id)?->name??'Sistem' }} · {{ $event->old_status?$states[$event->old_status].' → ':'' }}{{ $states[$event->new_status] }} · {{ $event->note }}
+@if($event->old_assigned_to!==$event->new_assigned_to)<br>Sorumlu {{ $team->find($event->old_assigned_to)?->name??'Atanmadı' }} → {{ $team->find($event->new_assigned_to)?->name??'Atanmadı' }}@endif</p>@endforeach</section></div>
 @endsection

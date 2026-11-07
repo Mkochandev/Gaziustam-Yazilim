@@ -1,5 +1,6 @@
 <?php
 return [
+    'recovered' => 'Your previous answers',
     'send' => 'Send enquiry',
     'saved' => 'Your enquiry was saved. We will follow up by email. Reference',
     'required' => ':attribute is required.',

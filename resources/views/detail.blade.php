@@ -10,12 +10,13 @@
 <article class="article"><a href="{{ url("/$locale/$section") }}">← {{ __('forms.'.$section) }}</a><h1>{{ $item->title }}</h1>
 <p class="article-meta">{{ strtoupper($locale) }} · {{ $item->published_at?->format('d.m.Y') }} @if($item->is_concept) · {{ __('forms.concept') }} @endif</p>
 <p class="excerpt">{{ $item->excerpt }}</p>
-@if($item->cover)<img src="{{ asset('storage/'.$item->cover) }}" alt="{{ $item->cover_alt }}" style="max-width:100%">@elseif($section==='projects')<x-project-art :category="$item->category"/>@endif
+@if($item->provider==='studio-demo')<p>{{ __('studio.demo') }}</p>@endif
+@if($item->cover)<x-media-image :path="$item->cover" :alt="$item->cover_alt" loading="eager"/>@elseif($section==='projects' && $item->is_concept)<x-project-art :category="$item->category"/>@endif
 <div class="article-body">{!! $item->body !!}</div>
 @if($section==='projects')
 @foreach(['problem','solution','deliverables'] as $key)@if($item->$key)<h2>{{ __('forms.'.$key) }}</h2><p>{{ $item->$key }}</p>@endif @endforeach
 <p>{{ implode(' · ',$item->content->technologies??[]) }}</p>
-@foreach($item->content->gallery??[] as $photo)<img loading="lazy" style="max-width:100%" src="{{ asset('storage/'.$photo) }}" alt="{{ $item->title }}">@endforeach
+@foreach($item->content->gallery??[] as $photo)<x-media-image :path="$photo" :alt="$item->gallery_alts[$photo]??$item->title"/>@endforeach
 @if($item->content->project_url)<p><a href="{{ $item->content->project_url }}" rel="noopener noreferrer">{{ __('forms.site') }} ↗</a></p>@endif
 <a class="btn" href="{{ url("/$locale?service=".$item->category).'#kontakt' }}">{{ __('forms.send') }}</a>@endif
 </article>

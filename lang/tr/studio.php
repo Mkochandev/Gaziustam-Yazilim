@@ -21,6 +21,7 @@ return [
     'deliver' => 'Hayata geçirelim',
     'contact' => 'Aklınızda ne var?',
     'empty' => 'Bu dilde henüz içerik yayımlanmadı.',
+    'demo' => 'Örnek içerik',
     'concept' => 'Konsept',
     'menu' => 'Menü',
     'language' => 'Dil',
@@ -41,3 +42,4 @@ return [
         'games' => ['title' => 'Oyun ve prototip', 'description' => 'Oynanabilir fikirler ve etkileşimli prototipler.'],
     ],
 ];
+

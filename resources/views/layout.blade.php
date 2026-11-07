@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'GaziUstam — '.__('studio.headline').' '.__('studio.accent'))</title>
-    <link rel="stylesheet" href="{{ asset('studio.css') }}">
+    @if(is_file(public_path('build/manifest.json'))) @vite('resources/css/app.css') @else <link rel="stylesheet" href="{{ asset('studio.css') }}"> @endif
     @php
         $listingPath ??= request()->segment(2) ?? '';
         $localizedUrls = $alternates ?? collect($locales)->mapWithKeys(fn ($language) => [
@@ -102,3 +102,4 @@
 </script>
 </body>
 </html>
+

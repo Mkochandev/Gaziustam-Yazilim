@@ -1,5 +1,6 @@
 <?php
 return [
+    'recovered' => 'Önceki yanıtlarınız',
     'send' => 'Talebi gönder',
     'saved' => 'Talebiniz kaydedildi. Size e-postayla dönüş yapacağız. Referans',
     'required' => ':attribute alanı zorunludur.',

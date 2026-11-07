@@ -61,7 +61,7 @@
                 <article class="work-card">
                     <a class="work-cover" href="{{ url($project->locale.'/projects/'.$project->slug) }}" aria-label="{{ $project->title }}">
                         @if($project->cover ?? null)
-                            <img src="{{ asset('storage/'.$project->cover) }}" alt="{{ $project->cover_alt ?? '' }}" loading="lazy">
+                            <x-media-image :path="$project->cover" :alt="$project->cover_alt ?? ''"/>
                         @elseif($project->is_concept)
                             <x-project-art :category="$project->category" />
                         @else
@@ -125,7 +125,7 @@
                 <article class="journal-card journal-{{ $loop->index % 3 }}">
                     <a class="journal-cover" aria-label="{{ $post->title }}" href="{{ url($post->locale.'/blog/'.$post->slug) }}">
                         @if($post->cover ?? null)
-                            <img src="{{ asset('storage/'.$post->cover) }}" loading="lazy" alt="{{ $post->cover_alt ?? '' }}">
+                            <x-media-image :path="$post->cover" :alt="$post->cover_alt ?? ''"/>
                         @else
                             <span class="journal-art" aria-hidden="true">
                                 @if($loop->first)<x-studio-star />@elseif($loop->index === 1)↗@else{ }@endif
@@ -135,7 +135,7 @@
                     </a>
                     <div class="journal-meta"><span>{{ $disciplines[$post->category]['title'] ?? $post->category }}</span><span>{{ strtoupper($post->locale) }}</span></div>
                     <h3><a href="{{ url($post->locale.'/blog/'.$post->slug) }}">{{ $post->title }}</a></h3>
-                    <p>{{ $post->excerpt }}</p>
+                    <p>{{ $post->excerpt }}</p>@if($post->provider === 'studio-demo')<small>{{ __('studio.demo') }}</small>@endif
                     <a class="journal-link" href="{{ url($post->locale.'/blog/'.$post->slug) }}">{{ __('studio.read_post') }}<span aria-hidden="true">↗</span></a>
                 </article>
             @empty
@@ -155,3 +155,4 @@
     </div>
 </section>
 @endsection
+

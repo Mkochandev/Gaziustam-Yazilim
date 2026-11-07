@@ -1,56 +1,144 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\User;
-use Illuminate\Support\Facades\{DB,Storage};
+use App\Services\Audit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
+
 class TeamController
 {
-    public const STATES=['new'=>'Yeni','review'=>'İnceleniyor','contact'=>'Görüşülüyor','offered'=>'Teklif gönderildi','accepted'=>'Kabul edildi','closed'=>'Kapatıldı','spam'=>'Spam'];
+    public const STATES = ['new' => 'Yeni', 'review' => 'İnceleniyor', 'contact' => 'Görüşülüyor', 'offered' => 'Teklif gönderildi', 'accepted' => 'Kabul edildi', 'closed' => 'Kapatıldı', 'spam' => 'Spam'];
+
     public function index(Request $r)
     {
-        $query=DB::table('enquiries')->latest('submitted_at');
-        foreach(['status','service_code','locale','assigned_to'] as $field) if($r->filled($field)) $query->where($field,$r->query($field));
-        foreach(['from'=>'>=','to'=>'<='] as $field=>$op) if($r->filled($field)) $query->whereDate('submitted_at',$op,$r->query($field));
-        if($r->filled('q')) $query->where(function($q)use($r){ foreach(['contact_name','contact_email','public_reference'] as $f) $q->orWhere($f,'like','%'.$r->query('q').'%'); });
-        return view('admin.enquiries',['items'=>$query->paginate(30)->withQueryString(),'states'=>self::STATES,'team'=>$this->team()]);
+        $query = DB::table('enquiries')->latest('submitted_at');
+        foreach (['status', 'service_code', 'locale', 'assigned_to'] as $field) {
+            if ($r->filled($field)) {
+                $query->where($field, $r->query($field));
+            }
+        }
+        foreach (['from' => '>=', 'to' => '<='] as $field => $op) {
+            if ($r->filled($field)) {
+                $query->whereDate('submitted_at', $op, $r->query($field));
+            }
+        }
+        if ($r->filled('q')) {
+            $query->where(function ($q) use ($r) {
+                foreach (['contact_name', 'contact_email', 'public_reference'] as $f) {
+                    $q->orWhere($f, 'like', '%'.$r->query('q').'%');
+                }
+            });
+        }
+
+        return view('admin.enquiries', ['items' => $query->paginate(30)->withQueryString(), 'states' => self::STATES, 'team' => $this->team()]);
     }
-    private function team(){ return User::where('active',true)->whereIn('role',['sales','owner'])->orderBy('name')->get(); }
+
+    private function team()
+    {
+        return User::where('active', true)->whereIn('role', ['sales', 'owner'])->orderBy('name')->get();
+    }
+
     public function show(int $id)
     {
-        $item=DB::table('enquiries')->find($id); abort_unless($item,404);
-        return view('admin.enquiry',['item'=>$item,'states'=>self::STATES,'team'=>$this->team(),'answers'=>DB::table('enquiry_answers')->where('enquiry_id',$id)->get(),'events'=>DB::table('enquiry_events')->where('enquiry_id',$id)->orderBy('id')->get(),'attachments'=>DB::table('enquiry_attachments')->where('enquiry_id',$id)->get()]);
+        $item = DB::table('enquiries')->find($id);
+        abort_unless($item, 404);
+
+        return view('admin.enquiry', ['item' => $item, 'states' => self::STATES, 'team' => $this->team(), 'answers' => DB::table('enquiry_answers')->where('enquiry_id', $id)->get(), 'events' => DB::table('enquiry_events')->where('enquiry_id', $id)->orderBy('id')->get(), 'attachments' => DB::table('enquiry_attachments')->where('enquiry_id', $id)->get()]);
     }
-    public function update(Request $r,int $id)
+
+    public function update(Request $r, int $id)
     {
-        $data=$r->validate(['status'=>['required',Rule::in(array_keys(self::STATES))],'assigned_to'=>['nullable',Rule::in($this->team()->pluck('id'))],'note'=>'nullable|string|max:5000']);
-        DB::transaction(function() use($r,$id,$data){
-            $item=DB::table('enquiries')->where('id',$id)->lockForUpdate()->firstOrFail();
-            DB::table('enquiries')->where('id',$id)->update(['status'=>$data['status'],'assigned_to'=>$data['assigned_to']??null]);
-            DB::table('enquiry_events')->insert(['enquiry_id'=>$id,'user_id'=>$r->user()->id,'old_status'=>$item->status,'new_status'=>$data['status'],'note'=>$data['note']??null,'created_at'=>now()]);
+        $data = $r->validate(['status' => ['required', Rule::in(array_keys(self::STATES))], 'assigned_to' => ['nullable', Rule::in($this->team()->pluck('id'))], 'note' => 'nullable|string|max:5000']);
+        DB::transaction(function () use ($r, $id, $data) {
+            $item = DB::table('enquiries')->where('id', $id)->lockForUpdate()->firstOrFail();
+            DB::table('enquiries')->where('id', $id)->update(['status' => $data['status'], 'assigned_to' => $data['assigned_to'] ?? null]);
+            DB::table('enquiry_events')->insert(['enquiry_id' => $id, 'user_id' => $r->user()->id, 'old_status' => $item->status, 'new_status' => $data['status'], 'old_assigned_to' => $item->assigned_to, 'new_assigned_to' => $data['assigned_to'] ?? null, 'note' => $data['note'] ?? null, 'created_at' => now()]);
         });
-        return back()->with('notice','Talep güncellendi.');
+
+        return back()->with('notice', 'Talep güncellendi.');
     }
-    public function download(int $id,int $attachment)
+
+    public function download(int $id, int $attachment)
     {
-        $file=DB::table('enquiry_attachments')->where(['enquiry_id'=>$id,'id'=>$attachment])->firstOrFail();
-        return Storage::disk('local')->download($file->path,$file->original_name,['Content-Type'=>'application/octet-stream','X-Content-Type-Options'=>'nosniff','Cache-Control'=>'private, no-store']);
+        $file = DB::table('enquiry_attachments')->where(['enquiry_id' => $id, 'id' => $attachment])->firstOrFail();
+
+        return Storage::disk('local')->download($file->path, $file->original_name, ['Content-Type' => 'application/octet-stream', 'X-Content-Type-Options' => 'nosniff', 'Cache-Control' => 'private, no-store']);
     }
+
     public function access()
     {
-        return view('admin.access',['users'=>User::orderBy('name')->get(),'tokens'=>DB::table('personal_access_tokens')->latest('id')->get()]);
+        return view('admin.access', ['users' => User::orderBy('name')->get(), 'tokens' => DB::table('personal_access_tokens')->latest('id')->get()]);
     }
+
     public function user(Request $r)
     {
-        $data=$r->validate(['name'=>'required|string|max:255','email'=>'required|email|max:255|unique:users','password'=>'required|string|min:12|max:100','role'=>'required|in:owner,sales,editor']);
-        $user=new User($data); $user->role=$data['role']; $user->save();
-        return back()->with('notice','Kullanıcı oluşturuldu.');
+        $data = $r->validate(['name' => 'required|string|max:255', 'email' => 'required|email|max:255|unique:users', 'password' => 'required|string|min:12|max:100', 'role' => 'required|in:owner,sales,editor']);
+        $user = new User($data);
+        $user->role = $data['role'];
+        $user->save();
+
+        return back()->with('notice', 'Kullanıcı oluşturuldu.');
     }
+
     public function token(Request $r)
     {
-        $data=$r->validate(['name'=>'required|string|max:100','abilities'=>'required|array|min:1','abilities.*'=>['required',Rule::in(['posts:read','posts:write','posts:publish'])]]);
-        $token=$r->user()->createToken($data['name'],$data['abilities']);
-        return back()->with('token',$token->plainTextToken);
+        $data = $r->validate(['name' => 'required|string|max:100', 'abilities' => 'required|array|min:1', 'abilities.*' => ['required', Rule::in(['posts:read', 'posts:write', 'posts:publish'])]]);
+        $token = $r->user()->createToken($data['name'], $data['abilities']);
+
+        return back()->with('token', $token->plainTextToken);
     }
-    public function revoke(int $id){ DB::table('personal_access_tokens')->where('id',$id)->delete(); return back()->with('notice','Token iptal edildi.'); }
+
+    public function updateUser(Request $r, int $id)
+    {
+        $data = $r->validate(['role' => 'required|in:owner,sales,editor', 'active' => 'required|boolean']);
+        DB::transaction(function () use ($id, $data) {
+            // Lock all owners in a fixed order to protect the last active owner.
+            $owners = User::where('role', 'owner')->orderBy('id')->lockForUpdate()->get();
+            $user = User::where('id', $id)->lockForUpdate()->firstOrFail();
+            if ($user->role === 'owner' && $user->active && (! $data['active'] || $data['role'] !== 'owner') && $owners->where('active', true)->count() < 2) {
+                throw ValidationException::withMessages(['role' => 'Son etkin Owner kaldırılamaz.']);
+            }
+            $user->role = $data['role'];
+            $user->active = (bool) $data['active'];
+            $user->save();
+            if (! $user->active || $user->role === 'sales') {
+                $user->tokens()->delete();
+            }
+            DB::table('sessions')->where('user_id', $user->id)->delete();
+            Audit::record('access_updated', 'user', $user->id);
+        });
+
+        return back()->with('notice', 'Kullanıcı yetkileri güncellendi.');
+    }
+
+    public function settings()
+    {
+        return view('admin.settings', [
+            'failed' => DB::table('failed_jobs')->select('uuid', 'failed_at')->orderByDesc('failed_at')->paginate(20),
+            'pending' => DB::table('jobs')->count(),
+            'logs' => DB::table('activity_logs')->latest('id')->limit(30)->get(),
+        ]);
+    }
+
+    public function retry(string $uuid)
+    {
+        abort_unless(DB::table('failed_jobs')->where('uuid', $uuid)->exists(), 404);
+        Artisan::call('queue:retry', ['id' => [$uuid]]);
+        Audit::record('retried', 'job', $uuid);
+
+        return back()->with('notice', 'Bildirim tekrar kuyruğa alındı.');
+    }
+
+    public function revoke(int $id)
+    {
+        DB::table('personal_access_tokens')->where('id', $id)->delete();
+
+        return back()->with('notice', 'Token iptal edildi.');
+    }
 }

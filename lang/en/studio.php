@@ -21,6 +21,7 @@ return [
     'deliver' => 'Build together',
     'contact' => 'What do you have in mind?',
     'empty' => 'No content published in this language yet.',
+    'demo' => 'Sample content',
     'concept' => 'Concept',
     'menu' => 'Menu',
     'language' => 'Language',
@@ -41,3 +42,4 @@ return [
         'games' => ['title' => 'Games & prototypes', 'description' => 'Playable ideas and interactive prototypes.'],
     ],
 ];
+

@@ -1,5 +1,6 @@
 <?php
 return [
+    'recovered' => 'Ihre bisherigen Angaben',
     'send' => 'Anfrage senden',
     'saved' => 'Ihre Anfrage wurde gespeichert. Wir melden uns per E-Mail. Referenz',
     'required' => ':attribute ist erforderlich.',

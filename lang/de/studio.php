@@ -21,6 +21,7 @@ return [
     'deliver' => 'Gemeinsam umsetzen',
     'contact' => 'Was haben Sie vor?',
     'empty' => 'Noch keine Inhalte in dieser Sprache veröffentlicht.',
+    'demo' => 'Beispielinhalt',
     'concept' => 'Konzept',
     'menu' => 'Menü',
     'language' => 'Sprache',
@@ -41,3 +42,4 @@ return [
         'games' => ['title' => 'Games & Prototypen', 'description' => 'Spielbare Ideen und interaktive Prototypen.'],
     ],
 ];
+
